@@ -56,6 +56,7 @@ def tic_tac_toe():
     board = [[' ' for i in range(3)] for j in range(3)]
     player = 'X'
     draw_board(board)
+
     while True:
         ask_move(player, board)
         draw_board(board)
