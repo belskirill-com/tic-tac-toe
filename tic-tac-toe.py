@@ -19,6 +19,7 @@ def draw_board(board):
         print("-----------")
 
 
+# проверка на победу
 def check_win(player, board):
     for i in range(len(board)):
         if board[i] == [player, player, player]:
