@@ -1,3 +1,4 @@
+# отрисовка игрового поля
 def draw_board(board):
     for x in range(len(board)):
         for y in range(len(board)):
@@ -33,6 +34,7 @@ def check_win(player, board):
     return False
 
 
+# функция ввода координат, с занесением в двумерный массив
 def ask_move(player, board):
     while True:
         try:
@@ -53,6 +55,7 @@ def ask_move(player, board):
             print('Неккоректный ввод')
 
 
+# функция управления игрой
 def tic_tac_toe():
     board = [[' ' for i in range(3)] for j in range(3)]
     player = 'X'
