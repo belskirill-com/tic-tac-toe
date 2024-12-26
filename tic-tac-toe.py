@@ -1,5 +1,5 @@
 # отрисовка игрового поля
-def draw_board(board):
+def draw_board(board: list) -> None:
     for x in range(len(board)):
         for y in range(len(board)):
             if board[x][y] == " ":
@@ -21,7 +21,7 @@ def draw_board(board):
 
 
 # проверка на победу
-def check_win(player, board):
+def check_win(player: str, board: list) -> bool:
     for i in range(len(board)):
         if board[i] == [player, player, player]:
             return True
@@ -35,7 +35,7 @@ def check_win(player, board):
 
 
 # функция ввода координат, с занесением в двумерный массив
-def ask_move(player, board):
+def ask_move(player: str, board: list) -> None:
     while True:
         try:
             x, y = input(f"{player}, Введите x и y координаты: ").strip().split()
@@ -56,9 +56,9 @@ def ask_move(player, board):
 
 
 # функция управления игрой
-def tic_tac_toe():
-    board = [[' ' for i in range(3)] for j in range(3)]
-    player = 'X'
+def tic_tac_toe() -> None:
+    board: list = [[' ' for i in range(3)] for j in range(3)]
+    player: str = 'X'
     draw_board(board)
 
     while True:
@@ -72,11 +72,11 @@ def tic_tac_toe():
             print("Ничья!")
             break
 
-        player = "0" if player == "X" else "X"
+        player: str = "0" if player == "X" else "X"
 
     while True:
         try:
-            restart = int(input('Хотите сыграть еще раз?(0: Нет, 1: Да)'))
+            restart: int = int(input('Хотите сыграть еще раз?(0: Нет, 1: Да)'))
             if restart == 1:
                 tic_tac_toe()
             elif restart == 0:
